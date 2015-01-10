@@ -3,11 +3,11 @@
 
 - name: be sure timezone is set to 'Asia/Tokyo'
   command: timedatectl set-timezone 'Asia/Tokyo'
-  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == 7
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version|int == 7
 
 - name: be sure locale is set to 'ja_JP.UTF-8'
   command: localectl set-locale LANG='ja_JP.UTF-8'
-  when: ansible_distribution == "CentOS" and ansible_distribution_major_version == 7
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version|int == 7
 
 - name: be sure common packages are installed
   yum: name={{ item }} state=latest
