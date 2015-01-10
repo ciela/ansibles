@@ -1,0 +1,8 @@
+---
+# file: packer-centos7.yml
+
+- host: 127.0.0.1
+  sudo: yes
+  connection: local
+  roles:
+    - common
