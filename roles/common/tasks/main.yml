@@ -15,6 +15,7 @@
 - name: be sure common packages are installed
   yum: name={{ item }} state=latest
   with_items:
+    - vim
     - chrony
     - telnet
     - nc
